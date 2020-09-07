@@ -1,0 +1,76 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.project-card{
+  cursor: pointer;
+  padding: 2rem;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  @media (max-width: 768px) {
+
+    background: $white;
+    h1,  p.number, .blue-txt{
+      color: $blue !important;
+      opacity: 1 !important;
+    }
+
+    a{
+      opacity: 1 !important;
+    }
+  }
+  @media (min-width: 992px) {
+
+    max-width: 100%;
+    padding: 4rem;
+    h1{
+      max-width: 100%;
+      font-size: 4.7rem;
+    }
+  }
+  @media (min-width: 1920px) {
+    h1{
+      max-width: 100%;
+      font-size: 5rem;
+    }
+  }
+  &:hover{
+    background: $white;
+    h1,  p.number, .blue-txt{
+      color: $blue;
+      opacity: 1;
+    }
+    a{
+      opacity: 1;
+    }
+  }
+  p.number{
+
+    color: white;
+    font-family: 'Archivo', sans-serif;
+    font-size: 2.4rem;
+  }
+  .blue-txt{
+    min-height: 160px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  a{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 8rem;
+    width: 8rem;
+    opacity: 0;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    background: $yellow;
+    svg{
+      max-width: 4rem;
+      max-height: 4rem;
+    }
+  }
+}

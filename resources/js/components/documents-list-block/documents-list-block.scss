@@ -1,0 +1,37 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.documents-list-block{
+  h1{
+    margin: 0;
+  }
+  h2{
+    font-size: 4rem;
+    margin: 0;
+    margin-top: 1rem;
+
+  }
+}
+.margin-top-items{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.drop-down-squared{
+    color: $blue !important;
+    border: 1px solid $blue;
+    display: inline-flex;
+    text-align: center !important;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include flex(1);
+    @include border-radius(0);
+    @media (max-width: 992px) {
+            width: 100%;
+    }
+    padding:1.2rem 2rem;
+    margin-right: 2rem;
+    font-size: 1.6rem;
+    .anticon{
+        font-size:2.4rem !important;
+    }
+}

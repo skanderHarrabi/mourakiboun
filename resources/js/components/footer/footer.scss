@@ -1,0 +1,183 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  .copyright {
+    margin: auto;
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+    }
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    @include justify-content(space-between);
+    h5 {
+      font-size: 1.1rem;
+      color: $blue;
+      text-transform: uppercase;
+    }
+    .sponsor-flex{
+      @include flexbox();
+      position: relative;
+      height: auto;
+      @include justify-content(center);
+      padding: 2rem;
+      @include flex-direction(column);
+      @include align-items(flex-end);
+      @media (min-width: 992px) {
+        @include flex-direction(row);
+      }
+      p{
+        font-family: "Archivo", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.05rem;
+        text-align: left;
+        margin: 0;
+        margin-right: 1rem;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+      }
+      img{
+        margin-right: auto;
+        max-width: 10rem;
+      }
+    }
+  }
+  .footer-grid {
+    margin-top: 10px;
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+    @include justify-content(space-between);
+    place-content: space-between;
+    grid-gap: 10px;
+    @media (min-width: 470px) {
+      margin-top: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+    @media (min-width: 768px) {
+      margin-top: 20px;
+
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    @media (min-width: 992px) {
+      margin-top: 30px;
+
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 30px;
+    }
+  }
+  .col {
+    svg{
+      max-width: 20rem;
+      width: 100%;
+      height: auto;
+      justify-self: flex-start;
+      margin: auto;
+      @media (min-width: 992px) {
+        margin: unset;
+        margin-bottom: auto;
+      }
+    }
+    .block {
+      width: 100%;
+      padding: 2rem;
+    }
+    @include flexbox();
+    @include flex-direction(column);
+    position: relative;
+    @include justify-content(space-between);
+    @include align-items(flex-start);
+    width: 100%;
+    height: auto;
+    .to-top-col {
+      position: absolute;
+      bottom: 0;
+
+      #txt-elements{
+        @media (max-width: 992px) {
+          display: none;
+        }
+      }
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        @include transition(all,0.2s,ease-in-out);
+        &:focus{
+          outline: none;
+        }
+        &:active{
+          @include transform(scale(.96));
+        }
+      }
+      width: 100%;
+      min-width: 4rem;
+      @media (max-width: 992px) {
+      position: fixed;
+        bottom: -85px;
+        right: -10px;
+      }
+      @include flexbox();
+      @include justify-content(flex-end);
+      @include align-items(flex-end);
+      @media (max-width: 321px) {
+        min-width: 1rem;
+        width: 3.2rem !important;
+      }
+      @media (max-width: 768px) {
+        width: 6rem;
+        right: 0;
+      }
+      svg {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        min-width: 4rem;
+        max-width: 10rem;
+
+      }
+      @include flexbox();
+      @media (min-width: 992px) {
+        @include justify-content(flex-end);
+      }
+    }
+    h4 {
+      width: 100%;
+      text-align: left;
+      color: $blue;
+      font-family: "Archivo", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+    p {
+      margin-left: 0;
+      padding-left: 0;
+      width: 100%;
+      text-align: left;
+      color: $blue;
+      font-family: "Archivo", sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      font-weight: 400;
+    }
+    a {
+      color: $blue;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}

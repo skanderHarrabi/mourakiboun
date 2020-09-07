@@ -1,0 +1,11 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.activity-details-page{
+  .txt-description{
+    font-family: 'Archivo', sans-serif;
+    color: $gray;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

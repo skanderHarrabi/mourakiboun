@@ -1,0 +1,134 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+.contact-page{
+  .pigeon-attribution{
+    display: none;
+  }
+  .marker-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+      height: 100px;
+      width: 100px;
+      svg{
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+      }
+    @include transition(all,0.2s,ease-in-out);
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      @include transform(scale(.97));
+    }
+  }
+  .map-box{
+    background: $yellow;
+    &:after{
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: green;
+      content: "";
+      opacity: .5;
+      mix-blend-mode:color;
+      filter: grayscale(90%);
+      -webkit-filter: grayscale(90%);
+      z-index: 1;
+    }
+  }
+  .content-container{
+    padding-top: 0;
+  }
+  .contact-map-flex{
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+    }
+    position: relative;
+
+    box-sizing: border-box;
+    .left{
+      &:after{
+        display: block;
+        content: "";
+        z-index: 1;
+        right: 2rem;
+        bottom:-1rem;
+        width:  22rem;
+        height: 2rem;
+        @media (min-width: 992px) {
+          width: 4.4rem;
+          height: 22rem;
+          right: -2.2rem;
+          top: 6rem;
+        }
+        position: absolute;
+
+        background: #FEDC00;
+
+      }
+      height: auto;
+      box-sizing: border-box;
+      position: relative;
+      background: $gray;
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+      @include justify-content(flex-start);
+      @include flex(1.2);
+      padding:2rem;
+      @media (min-width: 992px) {
+        padding:6rem;
+      }
+      p,a,h3{
+        color: white;
+        @include flexbox();
+        margin: 0;
+        padding-left: 0;
+        @include align-items(center);
+        svg{
+          width: 3rem;
+          margin-left: .4rem;
+          margin-right: .4rem;
+        }
+      }
+      p{
+        margin-top: 2rem;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        max-width: 35rem;
+        &.mini-text{
+          font-size: 1.4rem;
+        }
+      }
+      h3{
+        font-size: 3rem;
+        margin-top: 3rem;
+      }
+    }
+    .right{
+      min-height: 60rem;
+      box-sizing: border-box;
+      @include flex(1.8);
+      position: relative;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      width: 100%;
+      height: 65.5rem;
+    }
+  }
+  .form-container{
+    padding: 1rem;
+    @media (min-width: 992px) {
+      padding:3rem
+    }
+  }
+}

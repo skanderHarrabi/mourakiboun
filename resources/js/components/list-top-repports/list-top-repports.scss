@@ -1,0 +1,20 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.list-top-repports{
+  @include flexbox();
+  box-sizing: border-box;
+  @include flex-direction(column);
+  padding: 2rem;
+  @media (min-width: 992px) {
+    padding:6rem 0;
+  }
+  h1{
+    text-align: center;
+    @media (min-width: 992px) {
+      text-align: left;
+
+      margin-bottom: 4rem;
+    }
+  }
+}

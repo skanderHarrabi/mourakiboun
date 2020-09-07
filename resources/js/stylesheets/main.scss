@@ -1,0 +1,45 @@
+@import "mixins";
+@import "variables";
+@import "overides";
+@import "transition";
+@import "layout";
+@import "ui-elements.scss";
+@import "typography";
+
+html {
+  font-size: 10px;
+  @media (max-width: 500px) {
+    font-size: 9.5px;
+  }
+  @media (min-width: 1366px) {
+    font-size: 10px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 10.5px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 12px;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Archivo', sans-serif;
+  background: $white;
+}
+
+#app{
+  position: relative;
+}
+.marged-top-page{
+  margin-top: 8rem;
+  @media (min-width: 992px) {
+    margin-top: 14rem;
+  }
+}
+::selection {
+  background-color: $yellow;
+  color: $blue;
+}

@@ -1,0 +1,154 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.news-lettre-block{
+
+    .h2-small{
+        text-align: left;
+        font-weight:bold;
+        color: $blue;
+    }
+    .radio-group{
+        text-align: left;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color: $blue;
+        .ant-radio-inner{
+            border-color:$blue !important;
+            width: 2rem;
+            height: 2rem;
+            &:after{
+                background: $yellow !important;
+                top: 0px;
+                left: 0px;
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .ant-radio-wrapper{
+            color: $blue !important;
+            span{
+                color: $blue !important;
+
+            }
+        }
+    }
+  box-sizing: border-box;
+  @media (min-width: 992px) {
+    padding: 4rem;
+  }
+  background: $smoke-white;
+  .content-block-full-with{
+    background: transparent;
+    padding: 0;
+    .content-container{
+      padding: 0;
+    }
+  }
+  .newslettre-flex{
+    @include flexbox();
+    @include flex-direction(column);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+      .left,.right{
+        max-width: 50vw;
+      }
+    }
+    padding: 3rem 0;
+    .left{
+      .input-container{
+        max-width: 40rem;
+        position: relative;
+        .ant-input{
+          position: relative;
+          width: 100%;
+        }
+      }
+      background: $smoke-white;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+      @include align-items(center);
+      @media (min-width: 992px) {
+        @include align-items(stretch);
+      }
+      box-sizing: border-box;
+      @include flex(1);
+      width: 100%;
+      text-align: center;
+      padding: 5rem;
+      padding-top: 10rem;
+      h1{
+        font-size: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        text-transform: lowercase;
+        @media (min-width: 992px) {
+          max-width: 60rem;
+          text-align: left;
+        }
+      }
+      p{
+
+        text-align: center;
+        @media (min-width: 992px) {
+          text-align: left;
+        }
+      }
+    }
+
+    .right{
+      z-index: 0;
+      @include flex(1);
+      box-sizing: border-box;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      @include flex-direction(column);
+      @media (min-width: 992px) {
+        @include align-items(flex-start);
+
+        @include justify-content(center);
+      }
+      .socials{
+        @include flexbox();
+        width: 100%;
+        @include justify-content(space-between);
+        @include align-items(center);
+        max-width: 15rem;
+        margin-top: 5rem;
+      }
+      padding: 3rem 5rem;
+      padding-top: 8.2rem;
+      width: 100%;
+      background: $smoke-white;
+      position: relative;
+      h1{
+        font-size: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        text-transform: lowercase;
+        @media (min-width: 992px) {
+          max-width: 60rem;
+          text-align: left;
+        }
+      }
+      a{
+        svg{
+          path{
+            @include transition(all,0.2s,ease-in-out);
+          }
+        }
+        &:hover{
+          svg{
+            path{
+              fill: $yellow;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,9 @@
+/*
+@
+ This file contains the types constants
+@
+*/
+
+export const FETCH_ACTUALITES_REQUEST = "FETCH_ACTUALITES_REQUEST ";
+export const FETCH_ACTUALITES_SUCCESS = "FETCH_ACTUALITES_SUCCESS ";
+export const FETCH_ACTUALITES_FAILURE = "FETCH_ACTUALITES_FAILURE ";

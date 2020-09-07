@@ -1,0 +1,70 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.news-card{
+  @include flexbox();
+  background: $smoke-white;
+  margin-top: 1rem;
+  @include flex-direction(column);
+  @include transition(all,0.2s,ease-in-out);
+    .img-container{
+      position: relative;
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+      height: 100%;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        @include transition(all,0.2s,ease-in-out);
+      }
+    }
+
+  .content{
+
+    padding: 1rem;
+    @media (min-width: 992px) {
+      padding: 4rem;
+    }
+    h2{
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 0;
+      &:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 1rem;
+        width: 0;
+        z-index: -1;
+        background: $yellow;
+        @include transition(all,0.2s,ease-in-out);
+        display: block;
+      }
+    }
+    p.description, p.date{
+      width: 300px;
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      @media (min-width: 992px) {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+      }
+    }
+
+  }
+  &:hover{
+    h2{
+      &:before{
+        width: 70%;
+      }
+    }
+    background: #e0e0e0;
+    .img-container{
+      img{
+        @include transform(scale(1.1));
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "mixins";
+@import "variables";
+
+.ant-input{
+  @include border-radius(0);
+  border: .2rem solid $blue;
+  font-family: 'Archivo', sans-serif !important;
+  font-weight: 600;
+  &:hover{
+    border-color: $yellow;
+  }
+  &:focus{
+    border-color: $yellow;
+    box-shadow: none !important;
+  }
+  &::placeholder{
+    font-size: 1.3rem;
+    color: $blue;
+  }
+}
+.ant-btn-primary{
+  font-family: 'Archivo', sans-serif !important;
+  font-weight: 600;
+  @include border-radius(0);
+  background: $blue;
+  border-color: $blue;
+  &:focus, &:active,&:hover{
+    background: $yellow;
+    border-color: $yellow;
+    color: $blue;
+  }
+
+}

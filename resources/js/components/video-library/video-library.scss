@@ -1,0 +1,37 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+
+.video-library {
+
+  .content-container{
+    @media (max-width: 992px) {
+
+      padding: 1rem !important;
+    }
+  }
+  .video-list{
+    place-content: start;
+    .video-card{
+      position: relative;
+      max-height: 35rem;
+      height: auto;
+      &:first-child{
+        width: 100%;
+        @media (min-width: 992px) {
+          grid-column: span 3;
+        }
+        max-height: 50rem;
+        iframe{
+          min-height: 50rem;
+        }
+      }
+      iframe{
+        position: relative;
+        min-height: 35rem;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

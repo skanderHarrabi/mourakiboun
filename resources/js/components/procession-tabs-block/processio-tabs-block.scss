@@ -1,0 +1,118 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.procession-tabs{
+  @media (max-width: 992px) {
+    padding: 1rem;
+  }
+  @media (min-width: 992px) {
+    padding-bottom: 4rem;
+  }
+  h1.custom-h1{
+    max-width: 50rem;
+
+
+    @media (min-width: 992px) {
+      margin-top: 4rem !important;
+    }
+  }
+  .ant-tabs{
+    @include flexbox();
+    @include justify-content(flex-start);
+    @include align-items(center);
+    .ant-tabs-nav-wrap{
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(flex-start);
+      width: 100%;
+      @include flex(1);
+      @include justify-content(center);
+    }
+    .ant-tabs-nav{
+      @include flexbox();
+      @include flex-direction(column);
+      padding: 0rem 1rem;
+      @include align-items(center);
+      @include justify-content(flex-end);
+    }
+     .ant-tabs-left-bar,.ant-tabs-left-content{
+      border: none !important;
+    }
+    .ant-tabs-ink-bar{
+      display: none !important;
+    }
+
+    .ant-tabs-tab{
+      .tabpane-title{
+        font-size: 1.8rem;
+        @media (min-width: 992px) {
+          font-size: 2.4rem;
+        }
+        color: $blue;
+        opacity: .5;
+        text-align: left;
+      }
+      &.ant-tabs-tab-active{
+        .tabpane-title{
+          font-family: 'Archivo', sans-serif;
+          font-weight: 600;
+          font-size: 2.2rem;
+          @media (min-width: 992px) {
+            font-size: 4.8rem;
+          }
+
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .tabpane-title{
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 4.8rem;
+  }
+  .ant-tabs-tab{
+    margin: 0 !important;
+    padding: 0 !important;
+    @media (min-width: 992px) {
+
+      padding-right: 2rem !important;
+    }
+  }
+  .ant-tabs-content{
+    margin: auto;
+    @include align-self(flex-end);
+  }
+  .tab-proc-content{
+    max-width: 85rem;
+    padding: 0rem 1rem;
+    p.year{
+      color: $blue;
+      font-size: 2.4rem;
+      padding: 0;
+      margin: 0;
+    }
+    p{
+      font-size: 1.3rem;
+      color: $gray;
+      @media (min-width: 992px) {
+        font-size: 1.8rem;
+      }
+      margin: 0;
+      max-width: 65rem;
+      padding: 1rem 0;
+    }
+    h2{
+      font-size: 2rem;
+      line-height: 2rem;
+      @media (min-width: 992px) {
+        font-size: 7rem;
+        line-height: 7rem;
+        padding: 2rem 0;
+      }
+      margin: 0;
+
+      padding: 1rem 0;
+    }
+  }
+}

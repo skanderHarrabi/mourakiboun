@@ -1,0 +1,121 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.watcher-block{
+  box-sizing: border-box;
+  .content-block-full-with{
+    padding: 0;
+    .content-container{
+      padding: 0;
+      @media (min-width: 1366px) {
+        max-width: 1306px;
+      }
+    }
+  }
+  .watcher-flex{
+    box-sizing: border-box;
+    @include flexbox();
+    @include flex-direction(column);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+      .left,.right{
+        max-width: 50vw;
+      }
+    }
+    .left{
+      background: $smoke-white;
+
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include align-items(center);
+      box-sizing: border-box;
+      @include flex(1);
+      width: 100%;
+      text-align: center;
+      padding: 5rem;
+      h1{
+        font-size: 4rem;
+        @media (min-width: 768px) {
+          max-width: 60rem;
+        }
+      }
+    }
+
+    .right{
+      z-index: 1;
+      &:after{
+        content: "";
+        display: block;
+        z-index: 2;
+        position: absolute;
+        width: 8rem;
+        height: 8rem;
+        left:  calc(50% - 4rem);
+        top: -5rem;
+        background: $smoke-white;
+        transform: rotate(45deg);
+        @media (min-width: 992px) {
+          content: "";
+          display: block;
+          z-index: 2;
+          position: absolute;
+          width: 8rem;
+          height: 8rem;
+          left: -5rem;
+          top: calc(50% - 4rem);
+          background: $smoke-white;
+          transform: rotate(45deg);
+        }
+      }
+      @include flex(1);
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      padding: 3rem 5rem;
+      width: 100%;
+      background: $yellow;
+      position: relative;
+      .badge-fixed{
+        top: 0;
+        position: absolute;
+        height: 125%;
+        left: 10%;
+        img{
+          object-fit: cover;
+          object-position: top;
+          height: 100%;
+          max-width: 12rem;
+          top: 0;
+          position: relative;
+        }
+        @media (min-width: 992px) {
+         left: unset;
+        }
+      }
+      h1.very-large-text{
+
+        max-width: 100%;
+        text-align: center;
+        font-size: 7rem;
+        line-height:unset !important;
+        padding-top: 1.2rem;
+        @media (min-width: 768px) {
+          max-width: 40rem;
+        }
+        @media (min-width: 992px) {
+
+          max-width: 53rem;
+          font-size: 10.4rem;
+          line-height: 10.2rem;
+          padding-top: 1.2rem;
+        }
+        hyphens: auto;
+        word-wrap: break-word;
+        width: 100%;
+      }
+
+    }
+  }
+
+}

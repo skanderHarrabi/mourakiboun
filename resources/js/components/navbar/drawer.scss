@@ -1,0 +1,135 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.drawer {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  left: -100%;
+  @include box-shadow(5px, 0px, 20px, rgba(9, 22, 48, 0.44));
+  @include flexbox();
+  @include flex-direction(column);
+  @media (min-width: 992px) {
+    display: none;
+  }
+  height: 100vh;
+  width: 100%;
+  max-width: 26rem;
+  background: $blue;
+  padding:2rem 1rem;
+  @media (min-width: 375px) {
+    max-width: 31.5rem;
+  }
+  @media (min-width: 414px) {
+    max-width: 34rem;
+    padding: 2rem;
+  }
+  .logo-drawer{
+    width: 100%;
+    max-width: 14rem;
+    max-height: 7rem;
+    svg{
+      width: 100%;
+    }
+  }
+  .nav-links{
+    @include flexbox();
+    box-sizing: border-box;
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    padding-top: 20%;
+    height: 100%;
+    padding-left: 5%;
+    a {
+      font-family: 'Archivo', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: $white;
+      text-transform: capitalize;
+      text-decoration: none;
+      margin-top: 5%;
+      @include transition(all, 0.15s, ease-in-out);
+      &:hover {
+        color: $yellow;
+      }
+      &:active {
+        @include transform(scale(0.98));
+      }
+      &.active{
+        color: $yellow;
+      }
+    }
+  }
+}
+button.menu-icon {
+  margin: auto;
+  border: none;
+  background: transparent;
+  margin-left: auto;
+  outline: none;
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    @include transform(scale(0.97));
+  }
+  @include transition(scale, 0.2s, ease-in-out);
+  @include flexbox();
+  @media (min-width: 992px) {
+    display: none;
+  }
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  cursor: pointer;
+  width: 3.8rem;
+  @include justify-content(space-between);
+  height: 2.5rem;
+  .menu-buger-part {
+    display: block;
+    width: 3.8rem;
+    height: .3rem;
+    background: $white;
+
+    @include border-radius(0px);
+    &#burger-first-part {
+      @include transform-origin(center);
+    }
+    &#burger-second-part {
+      @include transform-origin(center);
+      width: 3.8rem;
+    }
+    &#burger-third-part {
+      width: 3.8rem;
+      @include transform-origin(right bottom);
+    }
+  }
+
+  .close-icon {
+    position: absolute;
+    width: 2.8rem;
+    left: 0;
+    top: 1rem;
+    height: 2.8rem;
+    span {
+      position: absolute;
+      display: block;
+      width: 0;
+      @include border-radius(0px);
+      height: .3rem;
+      background: $white;
+      &:first-child {
+        top: .1rem;
+        @include transform-origin(center center);
+        @include transform(rotate(45deg));
+      }
+      &:last-child {
+        top: .1rem;
+        @include transform(rotate(-45deg));
+        @include transform-origin(center center);
+      }
+    }
+  }
+}

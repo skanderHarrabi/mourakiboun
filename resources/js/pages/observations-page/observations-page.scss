@@ -1,0 +1,146 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.observations-page {
+    .dropdown-marged{
+        margin-left: auto;
+        position: absolute;
+        top:50%;
+        right: 4%;
+        .anticon{
+            color: $blue;
+            font-size: 2rem;
+        }
+    }
+  .container-yellow {
+    background: $yellow;
+    padding: 1rem;
+    @media (min-width: 992px) {
+      padding: 0 4rem;
+
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+    .content-block-full-with,
+    .content-container {
+      background: transparent;
+      h2,
+      h1 {
+        font-family: 'Archivo', sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .container-gray {
+    position: relative;
+    background: $gray;
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include align-items(flex-end);
+    padding: 2rem 1rem;
+    h1 {
+      max-width: 35rem !important;
+      font-size: 5rem !important;
+        line-height: 6rem;
+    }
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+      padding: 0 4rem;
+
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      h1 {
+        font-size: 7rem !important;;
+        line-height: 9rem;
+      }
+      h3 {
+        padding: 0;
+        margin: 0;
+        line-height: 5rem;
+        font-size: 4rem;
+      }
+    }
+    .left {
+      z-index: 1;
+      width: 100%;
+      @media (min-width: 992px) {
+        width: unset;
+      }
+      h1{
+        font-size: 7rem;
+      }
+    }
+    .right {
+      margin-left: auto;
+      @include flexbox();
+      width: 100%;
+      @media (min-width: 992px) {
+        padding-right: 1rem;
+        width: unset;
+      }
+      h1{
+        font-size: 7rem;
+      }
+      @include flex-direction(column);
+      @include justify-content(flex-end);
+      z-index: 1;
+    }
+    .svg-bg-container {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .container-blue {
+    background: $blue;
+    @media (max-width: 992px) {
+      padding: 3rem 1rem;
+    }
+    @media (min-width: 992px) {
+      padding: 3rem 4rem;
+
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+
+
+    .stat-card {
+      text-align: left;
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(center);
+      width: 100%;
+      @media (max-width: 992px) {
+
+        min-width: 100%;
+      }
+      @include flex(1);
+      .minimized-h1{
+        font-size: 4rem;
+        width: 100%;
+      }
+      h1,
+      h3 {
+        color: $white;
+      }
+      h3{
+        font-size: 3.6rem;
+        max-width: 23rem;
+      }
+      .percentage {
+        width: 100%;
+        color: $white;
+        font-family: "Archivo", sans-serif;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

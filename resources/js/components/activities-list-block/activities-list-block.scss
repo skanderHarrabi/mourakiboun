@@ -1,0 +1,21 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.activities-list-block {
+  h1.blue-txt {
+    max-width: 45rem;
+  }
+
+  .list-flex-activities{
+    @include flexbox();
+    overflow-x: scroll;
+    width: 100%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+}
+.activity-card{
+  display: block;
+}

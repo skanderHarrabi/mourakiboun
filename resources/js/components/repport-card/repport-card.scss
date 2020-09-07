@@ -1,0 +1,71 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.repport-card{
+  @include flexbox();
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  @include flex-direction(column);    @include transition(all,0.2s,ease-in-out);
+
+  padding: .5rem;
+  @media (min-width: 992px) {
+    padding: 1rem;
+  }
+  h1.big-text-lg{
+    text-align: center ;
+    width: 100%;
+    @media (min-width: 992px) {
+      text-align: center ;
+    }
+  }
+  .small-divider{
+    display: block;
+    background: $yellow;
+    width: 3rem;
+    height: .1rem;
+    margin-bottom: 3rem;
+    @include transition(all,0.2s,ease-in-out);
+    @media (min-width: 992px) {
+      margin-bottom: 6rem;
+    }
+  }
+  &:hover{
+    background: $gray;
+    .small-divider{
+      width: 70%;
+    }
+  }
+  p{
+    text-align: center;
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  a{
+    margin-top: 2rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1.6rem;
+    @include flexbox();
+    @include align-items(center);
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
+    color: $white;
+    @include transition(all,0.2s,ease-in-out);
+    &:hover{
+      color: $white;
+      opacity: .7;
+    }
+    span{
+      margin-left: 4rem;
+    }
+    svg{
+      path{
+        fill: $white;
+      }
+    }
+  }
+}

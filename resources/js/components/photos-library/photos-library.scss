@@ -1,0 +1,91 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.photos-library {
+  .ant-tabs-ink-bar {
+    display: none !important;
+  }
+  .ant-tabs-nav-scroll {
+    border-top: none !important;
+    @include flexbox();
+    @include justify-content(flex-end);
+  }
+  .custom-tab {
+
+    .ant-tabs-nav-scroll {
+      &:before{
+        display: none !important;
+      }
+      border: none !important;
+      @include flexbox();
+      @include justify-content(center);
+    }
+  }
+
+  .ant-tabs-tab {
+    color: $blue !important;
+    padding: 2rem !important;
+
+    color: $blue !important;
+    opacity: 0.5;
+    font-size: 2rem;
+    &.ant-tabs-tab-active {
+      opacity: 1;
+      .tab-img {
+        @include transform(scale(1.1));
+      }
+    }
+  }
+  .custom-tab {
+
+    .ant-tabs-tab {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: auto;
+      height: auto;
+      @include transition(all,0.2s,ease-in-out);
+      &.ant-tabs-tab-active {
+        padding: 0 !important;
+        margin: 0 !important;
+        .tab-img {
+          @include transition(all,0.2s,ease-in-out);
+          @include transform(scale(1));
+        }
+      }
+    }
+  }
+  .tab-img {
+    max-width: 20rem;
+    height: 15rem;
+    @include transform(scale(.9));
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      @include transition(all, 0.1s);
+      &:after{
+        content:"";
+        width: 100%;
+        height: 20px;
+        background: $yellow;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      &:hover{
+        @include transform(scale(1.2));
+      }
+    }
+  }
+  .image-view {
+    width: 100%;
+    height: 100%;
+    max-height: 50rem;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

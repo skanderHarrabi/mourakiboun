@@ -1,0 +1,280 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+
+.home-slider {
+  background: $blue;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  max-height: 100rem;
+  max-width: 100%;
+  position: relative;
+  .max-width-container {
+    display: block;
+    padding: 30px;
+    position: relative;
+    top: 0;
+    @media (min-width: 768px) {
+      padding: 10px !important;
+    }
+    @media (min-width: 992px) {
+      padding: 0;
+    }
+    margin: auto;
+    width: 100%;
+
+    height: 100% !important;
+    @media (min-width: 992px) {
+      max-width: 950px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+    }
+    @media (min-width: 1366px) {
+      max-width: 1306px;
+    }
+    @media (min-width: 1920px) {
+      max-width: 1380px;
+    }
+  }
+
+  .flex-slider{
+    @include flexbox();
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .flex-row{
+    @include flexbox();
+  }
+  .left{
+    max-width: 100%;
+    @media (min-width: 992px) {
+      max-width: 70%;
+    }
+
+    .slick-slider{
+      min-height: 100rem;
+
+      max-height: 100rem;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      max-width: 100%;
+      .slick-slide{
+        .slide-item{
+          height: 100%;
+          .counter-slide{
+            color: $yellow;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 600;
+            font-size: 7.2rem;
+            span{
+              font-size: 3.2rem;
+              color: $white;
+            }
+          }
+          display: flex !important;
+          display: -webkit-flex !important;
+          @include justify-content(center);
+          @include align-items(flex-start);
+          @include flex-direction(column);
+          height: 100% !important;
+          min-height: 100vh;
+          @media (min-width: 992px) {
+            min-height: 90rem;
+
+            max-height: 100rem;
+          }
+          z-index: 1;
+          top: 0;
+          bottom: 0;
+          h1{
+            font-size: 3rem;
+            line-height: 3.6rem;
+            max-width: 100%;
+            font-weight: bold;
+            @media (min-width: 992px) {
+              font-size: 7.2rem;
+              max-width:  70%;
+              line-height: 7.6rem;
+            }
+          }
+          h3{
+            color: $white;
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+            @media (min-width: 992px) {
+              font-size: 1.8rem;
+              line-height: 3.2rem;
+            }
+            font-family: 'Archivo', sans-serif;
+            font-weight: normal;
+            max-width: 60rem;
+          }
+          .date{
+            color: $white;
+            font-size: 1.3rem;
+            margin-top: 1.4rem;
+            font-family: 'Archivo', sans-serif;
+          }
+          a.go-to-link{
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(flex-start);
+            color: $yellow;
+            font-size: 2.4rem;
+            cursor: pointer;
+            margin-top: 1.2rem;
+            @include transition(all,0.2s,ease-in-out);
+            &:hover{
+              svg{
+                @include transform(translateX(1rem));
+              }
+              span{
+                opacity: .8;
+              }
+            }
+            svg{
+              @include transition(all,0.2s,ease-in-out);
+              max-width: 6rem;
+              height: 100%;
+            }
+            span{
+              @include transition(all,0.2s,ease-in-out);
+              margin-left: 3.2rem;
+              font-weight: 600;
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .right{
+    max-width: 30%;
+    display: none;
+    @media (min-width: 992px) {
+      @include flexbox();
+      @include align-items(center);
+      @include flex-direction(column);
+      @include justify-content(center);
+      height: 100%;
+
+      max-height: 100rem;
+      margin: auto;
+      .item-card{
+        opacity: .5;
+        @include flexbox();
+        @include transition(all,0.2s,ease-in-out);
+        &:hover{
+          opacity: 1;
+        }
+        padding-top: 2rem;
+        h5{
+          font-family: 'Archivo', sans-serif;
+          color: $yellow !important;
+          font-size: 2.2rem;
+          margin-right: 1.4rem;
+        }
+        p{
+          color: $white;
+          font-size: 1.26rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .thumb-preview{
+
+    }
+    .title-itm{
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(flex-start);
+      @include justify-content(flex-start);
+      @include flex(1);
+      font-weight: bold;
+      text-align: left !important;
+      color: $yellow;
+      width: 100% !important;
+      font-size: 2.4rem;
+      line-height: 2.6rem;
+
+    }
+  }
+  .progress-container-custom{
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      opacity: .7;
+    }
+    cursor: pointer;
+    @include flexbox();
+    @include justify-content(center);
+    @include justify-content(center);
+    position: absolute;
+    z-index: 2;
+    bottom: 3%;
+    @media (min-width: 992px) {
+      bottom: 10rem;
+      left: 40%;
+    }
+    height: 6.5rem;
+    width: 6.5rem;
+    left: 75%;
+
+    .ant-progress-inner{
+      .ant-progress-circle-trail{
+        stroke: rgba(254, 220, 0, 0.16) !important;
+      }
+      position: relative;
+      top: 0;
+      height: 6.5rem !important;
+      width: 6.5rem !important;
+    }
+    .icon-container{
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      .anticon{
+        color: $yellow;
+        font-size: 2rem;
+      }
+    }
+  }
+  .img-container {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: block;
+      content: "";
+      background: $blue;
+      mix-blend-mode: lighten;
+      opacity: 0.5;
+    }
+  }
+}

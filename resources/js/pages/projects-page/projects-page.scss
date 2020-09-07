@@ -1,0 +1,191 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.projects-page{
+
+
+  position: relative;
+  .flex-description-block{
+    @include flexbox();
+    position: relative;
+    @include flex-direction(column-reverse);
+    @media (min-width: 992px) {
+      @include align-items(center);
+      @include flex-direction(row);
+    }
+    .left{
+      @include flex(1);
+      position: relative;
+      height: auto;
+      min-height: 30rem;
+      @media (min-width: 992px) {
+        min-height: 60rem;
+      }
+      .img-container{
+      position: absolute;
+        overflow: hidden;
+        @media (min-width: 992px) {
+          top: -6rem;
+        }
+        height: 100%;
+        width: 100%;
+        img{
+          object-fit: cover;
+          object-position: bottom;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .right{
+      @include flex(1);
+      padding: 1rem;
+      @media (min-width: 992px) {
+        padding: 5rem;
+      }
+      p{
+        padding: 0;
+        color: $gray;
+        font-size: 2.2rem;
+        line-height: 3rem;
+      }
+      .signature{
+        font-family: 'Just Another Hand', cursive;
+        color: $blue;
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .flex-project-block{
+    @include flexbox();
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    min-height: auto;
+    margin-top: 3rem;
+    @include flex-direction(column-reverse);
+    @media (min-width: 992px) {
+      @include align-items(center);
+      @include flex-direction(row);
+    }
+    &.reversed{
+      .img-container{
+        margin-left: unset;
+        margin-right: auto;
+        right: unset;
+        left: 0;
+      }
+      .project-details{
+        margin-right: unset;
+        margin-left: auto;
+        .icon-container{
+          position: absolute;
+          right: unset;
+          left: 0rem;
+          bottom: -11rem;
+          background:$yellow;
+          @media (min-width: 992px) {
+            right:unset;
+            left: -11rem;
+
+            bottom: 0;
+          }
+          img{
+            height: 50%;
+            width: auto;
+          }
+        }
+      }
+    }
+    .img-container{
+      &:hover{
+        img{
+          @include transform(scale(1.05));
+        }
+      }
+      position: relative;
+      overflow: hidden;
+      @media (min-width: 992px) {
+        position: absolute;
+      }
+      right: 0;
+      margin-left: auto;
+      height: 100%;
+      width: 100%;
+      max-width: 90rem;
+      img{
+        object-fit: cover;
+        object-position: top;
+        @include transition(all,0.2s,ease-in-out);
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .project-details{
+      box-sizing: border-box;
+      height: auto;
+      margin-right: auto;
+      background: $white;
+      position: relative;
+      padding: 2rem 1rem;
+      width: 100%;
+      @media (min-width: 992px) {
+        padding: 5rem 3rem;
+        width: unset;
+        margin-top: 10rem;
+      }
+      p.number{
+        font-size: 2.4rem;
+        color: $blue;
+        padding-left: 4rem;
+        position: relative;
+        &:after{
+          display: block;
+          content: "";
+          position: absolute;
+          width: 2.1rem;
+          top: .1rem;
+          height:  2.1rem;
+          left: 0;
+          background: $yellow;
+
+        }
+      }
+      h1{
+        max-width: 40rem;
+        font-size: 5rem;
+        line-height: 6.4rem;
+      }
+      p{
+        max-width: 50rem;
+      }
+      .icon-container{
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        width: 11rem;
+        height: 11rem;
+        position: absolute;
+        right: 0rem;
+        bottom: -11rem;
+        img{
+          height: 60%;
+          width: auto;
+        }
+        svg{
+          width: 100%;
+          height: 100% !important;
+          max-width: 5rem;
+        }
+        @media (min-width: 992px) {
+          right: -11rem;
+
+          bottom: 0;
+        }
+        background:$yellow;
+      }
+    }
+  }
+}

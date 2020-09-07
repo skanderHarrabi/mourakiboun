@@ -1,0 +1,69 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.activity-card{
+    @include flex(1);
+  max-width: 30rem;
+  min-width: 26rem;
+  margin-right: 2rem;
+  &:hover{
+    .img-container{
+      img{
+        @include transform(scale(1.1));
+      }
+    }
+    .content{
+      &:before{
+        width: 6rem;
+      }
+    }
+  }
+  .img-container{
+    height: 100%;
+    width: 100%;
+    min-height: 20rem;
+    overflow: hidden;
+    max-height: 20rem;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      @include transition(all,0.2s,ease-in-out);
+    }
+  }
+  .content{
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include transition(all,0.2s,ease-in-out);
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    padding-top: 1rem;
+    &:before{
+      content: "";
+      display: block;
+      height: 60%;      @include transition(all,0.2s,ease-in-out);
+
+      width: 0;
+      z-index: -1;
+      background: $yellow;
+      position: absolute;
+    }
+    h1{
+      padding: 0;
+      margin: 0;
+      @include flex(1);
+    }
+    h3{
+      @include flex(9);
+      color: $blue;
+      font-size: 2rem;
+      font-family: 'Archivo', sans-serif;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      padding-left: 1rem;
+    }
+  }
+}

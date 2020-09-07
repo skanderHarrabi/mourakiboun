@@ -1,0 +1,93 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.document-card{
+  @include flexbox();
+  @include align-items(stretch);
+  @include flex-direction(column);
+  background: $lighter-silver;
+  @include transition(all,0.2s,ease-in-out);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  @media (min-width: 992px) {
+    padding: 3rem;
+    @include flex-direction(row);
+  }
+  &:hover{
+    background: $light-silver;
+    h4{
+      &:before{
+        width: 6rem;
+      }
+    }
+  }
+  h4{
+    font-size: 2.4rem;
+    z-index: 0;
+    font-weight: bold;
+    justify-self: flex-start;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .55rem;
+      width: 0;
+      display: block;
+      @include transition(all,0.2s,ease-in-out);
+      height: 1rem;
+      z-index: -1;
+      background: $yellow;
+    }
+  }
+  p{
+    font-size: 1.8rem;
+    color: $gray;
+  }
+  .left{
+    @include flex(8);
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    p{
+      max-width: 80rem;
+    }
+  }
+  .right{
+    @include flex(2);
+    height: auto;
+    position: relative;
+    .download-square{
+      @include transition(all,0.2s,ease-in-out);
+      cursor: pointer;
+      &:hover{
+        background: $yellow;
+      }
+      position: relative;
+      padding: 1rem 0;
+      @media (min-width: 992px) {
+        padding: 2rem 0;
+      }
+      background: $white;
+      width: auto;
+      height: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(center);
+      h5{
+        padding: 1rem 0;
+        @media (min-width: 992px) {
+          padding: 1rem 0;
+        }
+        color: $blue;
+        font-size: 1.4rem;
+        text-align: center;
+        max-width: 10rem;
+      }
+      svg{
+        max-width: 4rem;
+      }
+    }
+  }
+}

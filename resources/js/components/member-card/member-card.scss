@@ -1,0 +1,39 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.member-card {
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+  @include transition(all,0.2s,ease-in-out);
+  text-align: center;
+  @include flex(1);
+  .text-description {
+    padding: 2rem;
+  }
+  max-width: 30rem;
+  .img-container {
+    overflow: hidden;
+    height: 20rem;
+    @media (min-width: 992px) {
+      height: 40rem;
+    }
+
+    width: 100%;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      @include transition(all,0.2s,ease-in-out);
+
+    }
+  }
+  &:hover{
+    background: $yellow;
+    .img-container {
+      img{
+        @include transform(scale(1.1));
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.declarations-list-block{
+  @include flexbox();
+  @include flex-direction(column);
+  .content-container{
+    @media (max-width: 992px) {
+      padding: 1rem;
+    }
+  }
+}

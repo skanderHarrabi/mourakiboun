@@ -1,0 +1,82 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.contact-form{
+  width: 100%;
+  @include flexbox();
+  position: relative;
+  h1{
+    @media (min-width: 992px) {
+      font-size: 5rem !important;
+      max-width: 64rem;
+    }
+  }
+  .btn-link-filled{
+    margin-top: 6rem;
+    padding: 1rem 5rem;
+
+  }
+  @include flex-direction(column);
+  .form-items{
+    position: relative;
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include align-items(flex-end);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+    }
+    .ant-form-item{
+      margin-bottom: 0;
+      margin-top: 4rem;
+      width: 100%;
+    }
+    .ant-input{
+      width: 100% !important;
+      max-width: 100%;
+      @media (min-width: 992px) {
+        max-width: 37rem;
+      }
+      border: none;
+      border-bottom: .1rem solid $blue;
+      font-size: 2rem;
+      color: $blue;
+      &::placeholder{
+        color: $blue !important;
+        font-size: 2rem;
+      }
+      input{
+        width: 100%;
+        font-size: 2.2rem;
+
+      }
+
+    }
+    .left{
+      @include flex(1);
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(flex-end);
+      width: 100%;
+      height: auto;
+    }
+    .right{
+      position: relative;
+
+      height: auto;
+      @include flex(1);
+      width: 100%;
+      .ant-input {
+        width: 100% !important;
+        max-width: 100%;
+        @media (min-width: 992px) {
+          max-width: 100%;
+        }
+      }
+      textarea{
+        margin-top: 4rem;
+      }
+    }
+  }
+}

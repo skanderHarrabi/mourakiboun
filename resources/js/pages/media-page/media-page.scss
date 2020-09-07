@@ -1,0 +1,57 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.media-page{
+  .centered-block{
+    display: block;
+    margin: auto;
+    position: absolute;
+    max-height: 16rem;
+    top:-11.6rem;
+    width: 100%;
+    @media (min-width:992px) {
+      max-height: unset;
+      height: 130px;
+      top: -65px;
+    }
+  }
+  .nav-elements{
+    background: $white;
+    @include flexbox();
+    @include justify-content(center);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @media (min-width: 992px) {
+      @include flex-direction(row);
+      @include justify-content(space-between);
+    }
+    a{
+      padding: 2rem 3rem;
+      font-family: "Archivo", sans-serif;
+      color: $blue;
+      font-weight: bold;
+      font-size: 1.4rem;
+      position: relative;
+      @media (min-width: 992px) {
+        font-size: 2rem;
+        padding: 4rem 3rem;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 1rem;
+        background: $yellow;
+        bottom: 0;
+        left: 0;
+        @include transition(all,0.2s,ease);
+      }
+      &:active, &:focus{
+        &:after{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
